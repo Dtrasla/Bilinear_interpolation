@@ -1,11 +1,7 @@
-# This is a sample Python script.
-from hmac import new
-
 from PIL import Image
 import numpy as np
 from numpy import asarray
 
-#Calculates bilinear from doubling the image
 def bilinear(old_array, new_scale):
     old_height, old_width = old_array.shape
     new_height = old_height * new_scale
@@ -60,7 +56,6 @@ def interpolateSubgrid(new_array, i, j, new_scale):
 image = Image.open("test.png")
 image = image.convert("L")
 
-# Convert image to numpy array
 array = asarray(image)
 
 new_array = bilinear(array, 3)
